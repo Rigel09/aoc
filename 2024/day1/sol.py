@@ -1,8 +1,9 @@
-import numpy as np
 from pathlib import Path
 
+import numpy as np
 
-def run(file:Path) -> None:
+
+def run(file: Path) -> None:
     lines: list[str] = []
 
     with file.open("r", encoding="utf8") as f:
@@ -21,8 +22,8 @@ def run(file:Path) -> None:
     left_col.sort()
     right_col.sort()
 
-    left: np.ndarray = np.array(left_col)
-    right: np.ndarray = np.array(right_col)
+    left = np.array(left_col)
+    right = np.array(right_col)
 
     print(f"ans: {np.sum(np.abs( right - left ))}")
 
